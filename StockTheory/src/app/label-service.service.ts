@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {LabelComponent} from "./label/label.component";
-import {UserService} from "./user.service";
+import {UserProfileService} from "./UserProfile.service";
 
 @Injectable()
 export class LabelServiceService {
@@ -8,18 +8,18 @@ export class LabelServiceService {
   userLabels : LabelComponent[];
   companyLabels : {};
 
-  constructor(private userService : UserService) {
+  constructor(private userService : UserProfileService) {
     let userLabels = userService.getUserLabels();
-    for ( let label of userLabels ) {
-      for ( let company of label.getAttachedCompanies() ) {
-        if (!this.companyLabels[company]) {
-          this.companyLabels[company] = [];
-        }
-
-        this.companyLabels[company].push(label);
-
-      }
-    }
+    // for ( let label of userLabels ) {
+    //   for ( let company of label.getAttachedCompanies() ) {
+    //     if (!this.companyLabels[company]) {
+    //       this.companyLabels[company] = [];
+    //     }
+    //
+    //     this.companyLabels[company].push(label);
+    //
+    //   }
+    // }
   }
 
   getGenericLabels() : LabelComponent[] {
@@ -32,10 +32,6 @@ export class LabelServiceService {
     }
     return genericLabels;
 
-  }
-
-  getLabelsForStock(symbol : string) {
-    return this.userService.getLabelsFromSymbol(symbol);
   }
 
   toggleLabel(symbol  : string, label : LabelComponent) {

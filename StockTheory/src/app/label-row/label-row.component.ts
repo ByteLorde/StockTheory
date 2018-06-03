@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {LabelServiceService} from "../label-service.service";
-import {CompanyModel} from "../company.model";
+import {UserProfileService} from "../UserProfile.service";
+import {LabelComponent} from "../label/label.component";
 
 @Component({
   selector: 'app-label-row',
@@ -9,12 +10,17 @@ import {CompanyModel} from "../company.model";
 })
 export class LabelRowComponent implements OnInit {
 
-  @Input() company : CompanyModel;
-  constructor(private labelService : LabelServiceService) { }
+  @Input() labels : LabelComponent[];
+
+  constructor() { }
 
   getLabels() {
-    return this.labelService.getLabelsForStock(this.company.symbol);
+
+    return this.labels;
+
   }
+
+
   ngOnInit() {
   }
 

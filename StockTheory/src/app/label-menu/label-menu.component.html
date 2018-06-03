@@ -7,10 +7,10 @@
         </form>
         <br>
 
-      <div  *ngFor="let label of labels">
+      <div  *ngFor="let label of getLabels()">
         <div class="row" style="padding: 1%">
           <div class="col-md-12">
-            <app-label [other]="label" (click)="toggleLabel(label)" ></app-label>
+            <app-label [other]="label" (click)="toggleLabel(label)" [isChecked] = "isCompanyLabel(label)"></app-label>
             <div class="btn " style="float:right;width:auto;display:inline" href="#">
               <i class="fa fa-lg fa-pencil" aria-hidden="true"></i>
             </div>

@@ -20,6 +20,7 @@ export class LabelComponent implements OnInit {
   color : string;
   checked:boolean;
 
+  @Input() isChecked : boolean;
   @Input() other : LabelComponent;
 
   constructor() {
@@ -43,13 +44,7 @@ export class LabelComponent implements OnInit {
     this.checked = value;
   }
 
-  isRed() : boolean {
-    return true; // this.color == "red";
-  }
 
-  isChecked() : boolean {
-    return this.checked
-  }
   ngOnInit() {
     if (this.other) {
       console.log("other");

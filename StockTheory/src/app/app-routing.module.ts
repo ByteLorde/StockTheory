@@ -9,7 +9,7 @@ import {GlossaryPageComponent} from './glossary-page/glossary-page.component';
 import {TutorialPageComponent} from './tutorial-page/tutorial-page.component';
 import {StocksMainPageComponent} from './stocks-main-page/stocks-main-page.component';
 import {StockModalComponent} from './stock-modal/stock-modal.component';
-import {LabelManagerComponent} from "./label-manager/label-manager.component";
+import {LabelMenuComponent} from "./label-menu/label-menu.component";
 import {LabelComponent} from "./label/label.component";
 
 const routes: Routes = [

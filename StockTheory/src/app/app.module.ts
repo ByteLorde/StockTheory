@@ -64,11 +64,11 @@ import { MarketPageComponent } from './stock-modal/market-page/market-page.compo
 import { NewsPageComponent } from './stock-modal/news-page/news-page.component';
 import { GraphFactoryComponent } from './graph-factory/graph-factory.component';
 import { LabelComponent } from './label/label.component';
-import { LabelManagerComponent } from './label-manager/label-manager.component';
+import { LabelMenuComponent } from './label-menu/label-menu.component';
 import { LabelRowComponent } from './label-row/label-row.component';
 import { LabelsButtonComponent } from './labels-button/labels-button.component';
 import {LabelServiceService} from "./label-service.service";
-import {UserService} from "./user.service";
+import {UserProfileService} from "./UserProfile.service";
 // import { FirestoreComponent } from './firestore/firestore.component';
 
 // Copy the firebaseConfig from your created project on the firebase console
@@ -118,7 +118,7 @@ const firebaseConfig = {
     NewsPageComponent,
     GraphFactoryComponent,
     LabelComponent,
-    LabelManagerComponent,
+    LabelMenuComponent,
     LabelRowComponent,
     LabelsButtonComponent,
     // FirestoreComponent
@@ -151,7 +151,7 @@ const firebaseConfig = {
     MatMenuModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  providers: [AuthService, HttpClient, ArticleParserService, LoginModalComponent, StockMarketService, LabelServiceService, UserService],
+  providers: [AuthService, HttpClient, ArticleParserService, LoginModalComponent, StockMarketService, LabelServiceService, UserProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

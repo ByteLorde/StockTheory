@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {StockMarketService} from "../stock-market.service";
 import {CompanyModel} from "../company.model";
+import {LabelComponent} from "../label/label.component";
+import {UserProfileService} from "../UserProfile.service";
 
 @Component({
   selector: 'app-stock-modal',
@@ -13,7 +15,7 @@ export class StockModalComponent implements OnInit {
 
   summaryData : any;
   stock : CompanyModel = StockMarketService.selectedCompany;
-  constructor() { }
+  constructor(private userProfile : UserProfileService) { }
 
   ngOnInit() {
     this.grabSummaryData();
@@ -39,6 +41,18 @@ export class StockModalComponent implements OnInit {
 
   getStock() {
     return this.stock;
+  }
+
+  getSymbol() {
+    return this.stock.symbol;
+  }
+
+  getCompanyLabels() : LabelComponent[] {
+    return this.userProfile.getCompanyLabels(this.stock.symbol);
+  }
+
+  getUserLabels() : LabelComponent[] {
+    return this.userProfile.getUserLabels();
   }
 
   grabSummaryData(date : Date = new Date()) {
