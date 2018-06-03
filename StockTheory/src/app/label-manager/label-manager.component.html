@@ -1,0 +1,29 @@
+    <div class="card shadow"  style="width:22em">
+      <div class="card-body">
+        <h6 class="card-title text-center">Labels</h6>
+        <form class="form">
+          <div class="input-group">
+            <input type="search" class="form-control" placeholder="Search labels..."> </div>
+        </form>
+        <br>
+
+      <div  *ngFor="let label of labels">
+        <div class="row" style="padding: 1%">
+          <div class="col-md-12">
+            <app-label [other]="label" (click)="toggleLabel(label)" ></app-label>
+            <div class="btn " style="float:right;width:auto;display:inline" href="#">
+              <i class="fa fa-lg fa-pencil" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+        <p style="margin-left: 10px; cursor: pointer">
+          <b><u>Create New Label</u></b>
+        </p>
+
+
+
+      </div>
+    </div>

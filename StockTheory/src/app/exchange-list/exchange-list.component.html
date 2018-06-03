@@ -1,0 +1,11 @@
+
+<div class="row" *ngIf="getSelectedCompany()">
+  <div class="col-md-12">
+    <h5> <b>
+      Related Stocks
+    </b> </h5>
+    <div class="list-group">
+      <app-stocklist-item *ngFor="let company of getSelectedCompany().getRelatedCompanies()" (click)="selectCompany(company)" [company]="company"></app-stocklist-item>
+    </div>
+  </div>
+</div>

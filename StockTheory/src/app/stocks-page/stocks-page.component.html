@@ -1,0 +1,49 @@
+<app-login-modal></app-login-modal>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="https://v40.pingendo.com/assets/4.0.0/default/theme.css" type="text/css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<div class="py-5" *ngIf="getSelectedCompany()">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-7">
+        <!--<app-stock-list [title]="getRelatedCompaniesTitle()" [companyList]="getSelectedCompany().getRelatedCompanies()" [horizontal]="true"></app-stock-list>-->
+            <app-stock-card *ngIf="getSelectedCompany().getStock()" [company]="getSelectedCompany()"></app-stock-card>
+        <br>
+        <!--<app-stock-list [title]="getRelatedCompaniesTitle()" [companyList]="getSelectedCompany().getRelatedCompanies()" [horizontal]="true"></app-stock-list>-->
+
+        <br>
+
+      </div>
+      <div class="col-md-3" *ngIf="getSelectedCompany().getStock() && getSelectedCompany().getRelatedCompanies()">
+        <!--<app-stock-list [title]="getRelatedCompaniesTitle()" [companyList]="getSelectedCompany().getRelatedCompanies()"></app-stock-list>-->
+        <app-news-list [newsList]="getSelectedCompany().getStock().news"></app-news-list>
+      </div>
+      <div class="col-md-12">
+        <app-stock-supplemental-info *ngIf="getSelectedCompany()" [company]="getSelectedCompany()"></app-stock-supplemental-info>
+      </div>
+    </div>
+</div>
+
+<div class="text-center text-white py-5" style="background-color: cadetblue">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="display-4">We ♥ new friends</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <a href="https://www.facebook.com/" class="text-white" target="_blank"><i class="fa fa-fw fa-facebook fa-3x mx-3"></i></a>
+        <a href="https://twitter.com/" class="text-white" target="_blank"><i class="fa fa-fw fa-twitter fa-3x mx-3"></i></a>
+        <a href="https://plus.google.com/" class="text-white" target="_blank"><i class="fa fa-fw fa-3x fa-google-plus mx-3"></i></a>
+        <a href="https://www.instagram.com/" class="text-white" target="_blank"><i class="fa fa-fw fa-instagram fa-3x mx-3"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
