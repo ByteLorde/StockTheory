@@ -19,6 +19,14 @@ li a {
   text-align: center;
 }
 
+.hover-gray {
+  color: gray;
+}
+
+.hover-gray:hover {
+  color:black;
+}
+
 li a:hover {
   background-color: #111111;
 }

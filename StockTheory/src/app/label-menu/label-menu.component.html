@@ -1,29 +1,39 @@
     <div class="card shadow"  style="width:22em">
-      <div class="card-body">
+      <div class="card-body" *ngIf="!isLabelMenuVisible()">
         <h6 class="card-title text-center">Labels</h6>
         <form class="form">
           <div class="input-group">
-            <input type="search" class="form-control" placeholder="Search labels..."> </div>
+            <input type="search" id="labelSearch" class="form-control" placeholder="Search labels..."> </div>
         </form>
         <br>
 
-      <div  *ngFor="let label of getLabels()">
-        <div class="row" style="padding: 1%">
-          <div class="col-md-12">
-            <app-label [other]="label" (click)="toggleLabel(label)" [isChecked] = "isCompanyLabel(label)"></app-label>
-            <div class="btn " style="float:right;width:auto;display:inline" href="#">
+      <div  >
+        <div  class="row" style="padding: 1%">
+          <div *ngFor="let label of getLabels(), let index = index" style="padding: 1%" class="col-md-12">
+            <app-label [animated]="true" [other]="label" (click)="toggleLabel(label)" [isChecked] = "isCompanyLabel(label)"></app-label>
+            <div class="btn hover-gray" (click)="editLabel(index)" style="float:right;width:auto;display:inline">
               <i class="fa fa-lg fa-pencil" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="col-md-12"  style="padding: 1%" >
+            <app-label [other]="getNewLabel()" [animated]="true" (click)="createNewLabel()"></app-label>
+            <div class="btn hover-gray" (click)="createNewLabel()" style="float:right;width:auto;display:inline">
+              <i class="fa fa-lg fa-plus" aria-hidden="true"></i>
             </div>
           </div>
         </div>
 
-        </div>
-
-        <p style="margin-left: 10px; cursor: pointer">
-          <b><u>Create New Label</u></b>
-        </p>
-
-
 
       </div>
+
+      </div>
+
+      <div class="card-body" *ngIf="isLabelMenuVisible()">
+        <i class="fa fa-arrow-left" aria-hidden="true" (click)="setLabelMenuVisible(false)" style="cursor:pointer; color:gray; display:inline"> Back</i>
+
+        <app-change-label-menu *ngIf="labelToEdit" [label]="labelToEdit"></app-change-label-menu>
+
+      </div>
+
+
     </div>

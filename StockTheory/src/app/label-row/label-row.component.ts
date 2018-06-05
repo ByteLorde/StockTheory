@@ -11,6 +11,7 @@ import {LabelComponent} from "../label/label.component";
 export class LabelRowComponent implements OnInit {
 
   @Input() labels : LabelComponent[];
+  @Input() rowLimit : number = -1;
 
   constructor() { }
 

@@ -18,8 +18,7 @@ export class UserProfileService {
 
   constructor(private auth_service : AuthService) {
 
-    let userLabels : LabelComponent[] = [];
-    let colors = ["red", "pink", "orange", "yellow", "green", "blue", "purple"];
+    let colors = ["red", "pink", "orange", "yellow", "green", "blue", "purple", "lightblue", "gray", "black"];
     for (let color of colors) {
       let label = new LabelComponent();
       label.setColor(color);
@@ -34,15 +33,58 @@ export class UserProfileService {
     return this.watchlisted_stocks;
   }
 
-  getCompanyLabels(symbol : string) {
+  getCompanyLabels(symbol : string) : LabelComponent[] {
+
     if (!this.companies[symbol]) {
-      this.companies[symbol] = {labels : []}
+      return [];
+    }
+    if (!this.companies[symbol].labels) {
+      this.companies[symbol] = {labels: []};
+      return [];
     }
     return this.companies[symbol].labels;
+
+  }
+
+  addNewLabel(label : LabelComponent, symbol : string) {
+    if (!this.companies[symbol]) {
+      this.companies[symbol] = {labels : []};
+    }
+
+    this.companies[symbol].labels.push(label);
+    this.userLabels.push(label);
+
   }
 
   getUserLabels() : LabelComponent[] {
     return this.userLabels;
+  }
+
+  getGenericLabels() : LabelComponent[] {
+    let colors = ["red", "pink", "orange", "yellow", "green", "blue", "purple", "lightblue", "gray", "black"];
+    let labels : LabelComponent[] = [];
+    for (let color of colors) {
+      let label = new LabelComponent();
+      label.setColor(color);
+      labels.push(label);
+    }
+    return labels;
+  }
+
+  deleteLabel(label : LabelComponent) {
+    for (let key of Object.keys(this.companies)) {
+      let labels = this.companies[key].labels;
+      let innerIndex = labels.indexOf(label);
+      if (innerIndex > -1) {
+        this.companies[key].labels.splice(innerIndex, 1);
+      }
+    }
+
+    let index = this.userLabels.indexOf(label);
+    if (index > -1) {
+      this.userLabels.splice(index, 1);
+    }
+
   }
 
 
@@ -58,9 +100,7 @@ export class UserProfileService {
       this.companies[symbol].labels.splice(this.companies[symbol].labels.indexOf(label), 1);
     }
 
-    for (let label of this.companies[symbol]) {
-      console.log(label);
-    }
+
   }
 
 }

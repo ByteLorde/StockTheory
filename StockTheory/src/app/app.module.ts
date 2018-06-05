@@ -69,6 +69,7 @@ import { LabelRowComponent } from './label-row/label-row.component';
 import { LabelsButtonComponent } from './labels-button/labels-button.component';
 import {LabelServiceService} from "./label-service.service";
 import {UserProfileService} from "./UserProfile.service";
+import { ChangeLabelMenuComponent } from './label-menu/change-label-menu/change-label-menu.component';
 // import { FirestoreComponent } from './firestore/firestore.component';
 
 // Copy the firebaseConfig from your created project on the firebase console
@@ -121,6 +122,7 @@ const firebaseConfig = {
     LabelMenuComponent,
     LabelRowComponent,
     LabelsButtonComponent,
+    ChangeLabelMenuComponent,
     // FirestoreComponent
   ],
   imports: [

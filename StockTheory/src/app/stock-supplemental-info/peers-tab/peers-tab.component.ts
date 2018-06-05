@@ -28,8 +28,6 @@ export class PeersTabComponent implements AfterViewInit {
   grabPeers() {
 
       StockMarketService.createCompaniesFromList(this.company.getStock().peers).then(companies => {
-        console.log("companies");
-        console.log(companies);
         this.peers = companies;
         this.loadData();
       });

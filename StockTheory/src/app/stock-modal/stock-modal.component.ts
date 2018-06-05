@@ -14,10 +14,12 @@ import {UserProfileService} from "../UserProfile.service";
 export class StockModalComponent implements OnInit {
 
   summaryData : any;
+  menuVisible : boolean;
   stock : CompanyModel = StockMarketService.selectedCompany;
   constructor(private userProfile : UserProfileService) { }
 
   ngOnInit() {
+    this.menuVisible = false;
     this.grabSummaryData();
   }
 
@@ -41,6 +43,13 @@ export class StockModalComponent implements OnInit {
 
   getStock() {
     return this.stock;
+  }
+  toggleMenuVisible() {
+    this.menuVisible = !this.menuVisible;
+  }
+
+  setMenuVisible(value : boolean) {
+    this.menuVisible = value;
   }
 
   getSymbol() {
