@@ -11,6 +11,9 @@ import {StocksMainPageComponent} from './stocks-main-page/stocks-main-page.compo
 import {StockModalComponent} from './stock-modal/stock-modal.component';
 import {LabelMenuComponent} from "./label-menu/label-menu.component";
 import {LabelComponent} from "./label/label.component";
+import {StockMarketViewComponent} from "./stock-market-view/stock-market-view.component";
+import {ScreenerPageComponent} from "./screener-page/screener-page.component";
+import {StockCardComponent} from "./stock-card/stock-card.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'homepage', pathMatch: 'full'},
@@ -22,7 +25,8 @@ const routes: Routes = [
   {path: 'about', component: AboutPageComponent},
   {path: 'glossary', component: GlossaryPageComponent},
   {path: 'tutorial', component: TutorialPageComponent},
-  {path: 'temp', component: StockModalComponent}
+  {path: 'temp', component: StockModalComponent},
+
 ];
 
 @NgModule({

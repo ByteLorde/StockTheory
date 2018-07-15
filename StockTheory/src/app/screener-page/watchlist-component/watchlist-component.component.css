@@ -1,0 +1,11 @@
+li {
+  color:orange;
+}
+ul {
+  list-style-type: none;
+}
+
+
+.main {
+  border: 1px solid red;
+}

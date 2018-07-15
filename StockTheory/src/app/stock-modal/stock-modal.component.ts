@@ -23,6 +23,16 @@ export class StockModalComponent implements OnInit {
     this.grabSummaryData();
   }
 
+  getCompany() : CompanyModel {
+    return this.stock;
+  }
+
+  getCompanyStock() {
+    return this.stock.stock;
+  }
+  format(value : number) : string{
+     return value.toLocaleString();
+  }
   prettify(value : number) {
     return value;
     // if (isNaN(value)) {

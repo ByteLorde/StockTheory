@@ -1,4 +1,3 @@
-
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
   <a href="#">About</a>
@@ -7,6 +6,11 @@
   <a href="#">Contact</a>
 </div>
 
-<h2>Animated Sidenav Example</h2>
-<p>Click on the element below to open the side navigation menu.</p>
-<span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776; open</span>
+<div id="main">
+  <app-global-header></app-global-header>
+  <router-outlet></router-outlet>
+
+  <p>Click on the element below to open the side navigation menu, and push this content to the right.</p>
+  <span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776; open</span>
+</div>
+

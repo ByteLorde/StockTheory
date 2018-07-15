@@ -12,12 +12,13 @@ export class SidenavComponent implements OnInit {
   ngOnInit() {
   }
 
-  openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
+   openNav() {
+     document.getElementById("mySidenav").style.width = "250px";
+
   }
 
-  closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-  }
+   closeNav() {
+     document.getElementById("mySidenav").style.width = "0";
 
+  }
 }

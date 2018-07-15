@@ -70,6 +70,13 @@ import { LabelsButtonComponent } from './labels-button/labels-button.component';
 import {LabelServiceService} from "./label-service.service";
 import {UserProfileService} from "./UserProfile.service";
 import { ChangeLabelMenuComponent } from './label-menu/change-label-menu/change-label-menu.component';
+import { StockMarketViewComponent } from './stock-market-view/stock-market-view.component';
+import { ScreenerPageComponent } from './screener-page/screener-page.component';
+import { ChartsViewComponent } from './screener-page/charts-view/charts-view.component';
+import { WatchlistComponentComponent } from './screener-page/watchlist-component/watchlist-component.component';
+import { NewsComponentComponent } from './screener-page/news-component/news-component.component';
+import { DetailsComponentComponent } from './screener-page/details-component/details-component.component';
+import { FilterTableComponent } from './screener-page/filter-table/filter-table.component';
 // import { FirestoreComponent } from './firestore/firestore.component';
 
 // Copy the firebaseConfig from your created project on the firebase console
@@ -123,6 +130,13 @@ const firebaseConfig = {
     LabelRowComponent,
     LabelsButtonComponent,
     ChangeLabelMenuComponent,
+    StockMarketViewComponent,
+    ScreenerPageComponent,
+    ChartsViewComponent,
+    WatchlistComponentComponent,
+    NewsComponentComponent,
+    DetailsComponentComponent,
+    FilterTableComponent,
     // FirestoreComponent
   ],
   imports: [
