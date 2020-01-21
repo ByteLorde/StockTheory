@@ -1,0 +1,59 @@
+<app-card-section [header]="header" [icon]="icon">
+    <div class="badge-button-container d-flex flex-wrap padding-tb-15">
+        <button *ngFor="let tag of companyProfile.tags"
+                pButton
+                type="button"
+                class="ui-button badge-button"
+                [label]="tag">
+        </button>
+    </div>
+
+    <div class="stats-container">
+        <strong>Stats</strong>
+        <hr>
+        <div class="state-items row">
+            <div class="stat-item d-flex justify-content-between col-sm-6 col-md-6 col-lg-4" style="width: 100%">
+                <small>OPEN</small>
+                <small>{{stock.open | currency}}</small>
+            </div>
+            <div class="stat-item d-flex justify-content-between col-sm-6 col-md-6 col-lg-4" style="width: 100%">
+                <small>HIGH</small>
+                <small>{{stock.high | currency}}</small>
+            </div>
+            <div class="stat-item d-flex justify-content-between col-sm-6 col-md-6 col-lg-4" style="width: 100%">
+                <small>LOW</small>
+                <small>{{stock.low | currency}}</small>
+            </div>
+            <div class="stat-item d-flex justify-content-between col-sm-6 col-md-6 col-lg-4" style="width: 100%">
+                <small>52 WEEK HIGH</small>
+                <small>{{stock.week52High | currency}}</small>
+            </div>
+            <div class="stat-item d-flex justify-content-between col-sm-6 col-md-6 col-lg-4" style="width: 100%">
+                <small>52 WEEK LOW</small>
+                <small>{{stock.week52Low | currency}}</small>
+            </div>
+            <div class="stat-item d-flex justify-content-between col-sm-6 col-md-6 col-lg-4" style="width: 100%">
+                <small>MARKET CAP</small>
+                <small>{{stock.marketCap | shortNumber}}</small>
+            </div>
+            <div class="stat-item d-flex justify-content-between col-sm-6 col-md-6 col-lg-4" style="width: 100%">
+                <small>VOLUME</small>
+                <small>{{stock.volume | shortNumber}}</small>
+            </div>
+            <div class="stat-item d-flex justify-content-between col-sm-6 col-md-6 col-lg-4" style="width: 100%">
+                <small>AVG VOLUME</small>
+                <small>{{stock.avgTotalVolume | shortNumber}}</small>
+            </div>
+            <div class="stat-item d-flex justify-content-between col-sm-12 col-md-12 col-lg-4" style="width: 100%">
+                <small>P/E RATIO</small>
+                <small>{{stock.peRatio | number}}</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="details-section padding-tb-15">
+        <strong>About {{companyProfile.companyName}}</strong>
+        <hr>
+        <p>{{companyProfile.description}}</p>
+    </div>
+</app-card-section>

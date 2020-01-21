@@ -1,0 +1,40 @@
+$light-gray = rgba(240, 240, 240,.25);
+
+body .ui-table .ui-table-thead > tr > th
+  color: $gray-2
+  background-color: $black-2
+  border: none
+  text-align: left
+  padding: 15px
+  white-space: pre
+
+  & > td
+    padding: 15px
+    padding-left: 0
+
+  & > sup
+    visibility: hidden
+    font-size: .9em
+    transition: all .2s ease-in-out
+
+  &:hover > sup
+    cursor: pointer
+    visibility: visible
+
+    &:hover
+      color: $yellow-1
+
+body .ui-table .ui-table-tbody > tr, body .ui-table .ui-table-tbody > tr:nth-child(even)
+  background-color: $black-1
+  transition: all .2s ease-in-out
+  cursor: pointer
+  & > td
+    border: none
+    white-space: pre
+    padding: 10px
+    font-size: .9em
+    border-bottom: 1px solid $light-gray;
+
+  &:hover
+    background-color: $black-3
+

@@ -1,0 +1,57 @@
+.card-label-container
+  padding: 8px
+  border-radius: 3px
+  margin: 3px 0
+  cursor: pointer
+  align-items: center
+  border-left: 0 double transparent
+  transition: all 250ms ease-in-out
+
+  opacity: .8
+
+  &:hover
+    opacity: 1
+
+.card-label-container.expanded
+  height: 25px
+  min-height: 25px
+  max-height: 50px
+
+  width: 25%
+  min-width: 25px
+  max-width: 250px
+
+.card-label-container.collapsed
+  height: 15px
+  min-height: 15px
+  max-height: 15px
+
+  width: 15px
+  min-width: 15px
+  max-width: 15px
+
+.card-label-text
+  font-family: "Verdana"
+  font-weight: 700
+  font-size: .85em
+  text-shadow: black 0 0 1px;
+  transition: all 150ms ease-in-out
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+
+.text-hidden
+  opacity: 0
+  max-width: 0
+  max-height: 0
+  transition: all 150ms ease-in-out
+
+.text-visible
+  opacity: 1
+  width: auto
+  max-width: 250px
+  max-height: 50px
+  transition: all 150ms ease-in-out
+
+

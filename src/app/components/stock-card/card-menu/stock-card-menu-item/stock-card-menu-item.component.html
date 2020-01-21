@@ -1,0 +1,21 @@
+
+<button pButton
+        class="stock-card-menu-button w-100 bg-black-1"
+        [disabled]="disabled"
+        [label]="label | titlecase"
+        icon="pi {{icon}}"
+        [iconPos]="iconPosition"
+        (click)="overlayPanel.toggle($event)">
+
+</button>
+
+<p-overlayPanel #overlayPanel
+                [baseZIndex]="999999"
+                *ngIf="!disabled"
+                appendTo="body"
+                [dismissable]="true"
+                [showCloseIcon]="true">
+    <div class="overlay-content box-shadow-light">
+        <ng-content></ng-content>
+    </div>
+</p-overlayPanel>

@@ -1,0 +1,36 @@
+<p-table
+        [columns]="columns"
+        [value]="tableData"
+        [autoLayout]="true"
+        [responsive]="true"
+        [virtualScroll]="true">
+
+    <ng-template pTemplate="caption" let-rowData let-columns="columns">
+        <div class="d-flex flex-row justify-content-between">
+            <span>Search Results | Showing 35 of 35</span>
+            <div class="">
+                x
+            </div>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns">
+                {{col.label | titlecase}}<sup><i class="pi pi-question-circle"></i></sup>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr (click)="selectedStock = rowData">
+            <td *ngFor="let col of columns" class="text-white column-type-{{col.type}}">
+                <span *ngIf="col.type === ColumnType.STRING">{{rowData[col.field] || '--'}}</span>
+                <span *ngIf="col.type === ColumnType.CURRENCY">{{(rowData[col.field] | currency) || '--'}}</span>
+                <span *ngIf="col.type === ColumnType.PERCENT" class="td-percent">{{(rowData[col.field] * 100 | number) || '--'}}</span>
+                <span *ngIf="col.type === ColumnType.NUMBER">{{(rowData[col.field] | number) || '--'}}</span>
+                <span *ngIf="col.type === ColumnType.TIME">{{(rowData[col.field] | date:'medium') || '--'}}</span>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+<app-stock-card [(visible)]="cardVisible" [stock]="selectedStock"></app-stock-card>

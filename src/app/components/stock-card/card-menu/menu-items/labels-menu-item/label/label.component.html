@@ -1,0 +1,9 @@
+<div class="label-outer d-flex align-items-center">
+    <div class="label-container d-flex justify-content-between flex-grow-1"
+         [ngStyle]="{ backgroundColor: label.color }"
+         (click)="labelClicked.emit(label)">
+        <span class="label-text"> {{label.text || '&nbsp;'}}</span>
+        <i class="pi pi-check" [ngStyle]="{ visibility: selected ? 'visible' : 'hidden' }"></i>
+    </div>
+    <i class="pi pi-pencil edit-icon"></i>
+</div>

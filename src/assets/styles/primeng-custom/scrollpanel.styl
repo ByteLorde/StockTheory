@@ -1,0 +1,28 @@
+@import "../../../assets/styles/custom-colors.styl"
+
+.ui-scrollpanel-wrapper
+  border-right: 0 solid rgba(0, 0, 0, 0)
+  border-radius: 0
+  transition: all .3s ease-in-out
+
+  &:hover
+    border-radius: 3px
+
+  &:hover .ui-scrollpanel-bar
+    opacity: 1
+
+  &:hover .ui-scrollpanel-bar-x
+    height: 3px
+    background-color: $black-3
+
+.ui-scrollpanel-bar
+  transition: opacity 300ms ease-in-out, width 300ms ease-in-out, height 300ms ease-in-out, background-color 300ms ease-in-out
+  opacity: 0
+  width: 0
+  height: 0
+  background-color: $black-3
+
+.ui-scrollpanel-bar-y
+  width: 0
+  top: 0
+

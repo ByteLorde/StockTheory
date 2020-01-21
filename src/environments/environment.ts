@@ -1,9 +1,15 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
+const IEX_URL = 'https://cloud.iexapis.com/stable';
 export const environment = {
-  production: false
+  production: false,
+  API_KEY: 'pk_d1f42a9c2f29432cb7f4193df7d1a32c',
+  list_most_active: `${IEX_URL}/stock/market/list/mostactive`,
+  list_gainers: `${IEX_URL}/stock/market/list/gainers`,
+  list_losers: `${IEX_URL}/stock/market/list/losers`,
+  list_volume: `${IEX_URL}/stock/market/list/iexvolume`,
+  list_percent: `${IEX_URL}/stock/market/list/iexpercent`
 };
 
 /*

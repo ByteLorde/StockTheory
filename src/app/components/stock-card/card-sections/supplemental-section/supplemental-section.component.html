@@ -1,0 +1,31 @@
+<app-card-section [header]="header" [icon]="icon">
+
+    <div class="supplemental-container d-flex flex-wrap">
+<!--        <div class="supplemental-section" *ngIf="(cardMembers | async)?.length > 0">-->
+<!--            <span class="supplemental-section-title">MEMBERS</span>-->
+
+<!--            <div class="d-flex flex-row flex-wrap">-->
+<!--                <div class="members-container d-flex" *ngFor="let member of cardMembers | async">-->
+<!--                    <i class="pi pi-user"></i>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+        <div class="supplemental-section" *ngIf="(cardLabels | async)?.length > 0">
+            <span class="supplemental-section-title">LABELS</span>
+
+            <div class="d-flex flex-row flex-wrap">
+                <div class="label-container d-flex" *ngFor="let label of cardLabels | async">
+                    <app-card-facing-label [label]="label"
+                                           [size]="'large'"
+                                           (labelClicked)="labelsExpanded = !labelsExpanded"
+                                           [expanded]="labelsExpanded"></app-card-facing-label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</app-card-section>
+
+<p-toast [style]="{marginTop: '80px'}"></p-toast>

@@ -1,0 +1,43 @@
+<app-card-section [header]="'something'" [icon]="icon">
+    <div class="price-labels d-flex justify-content-between">
+        <span class="stock-price-label">{{stock?.latestPrice | currency}}</span>
+        <span class="supplemental-price-label">{{stock?.latestPrice | currency}}</span>
+    </div>
+    <div class="chart-container position-relative">
+        <p-chart type="line"
+                 #chart
+                 *ngIf="data"
+                 [data]="data"
+                 [options]="options"
+                 (onDataSelect)="selectData($event)"
+                 [responsive]="true"
+                 [height]="'100%'"
+                 [width]="'100%'">
+        </p-chart>
+
+        <small class="hover-item"
+               #hoverItem
+               *ngIf="hoveredItem"
+               style="white-space: nowrap"
+               [ngStyle]="{position: 'absolute',
+                                left: hoveredItem.x + 'px',
+                                top: '0px',
+                                backgroundColor: '#1b1b1d',
+                                zIndex: '999',
+                                marginLeft: -(hoverItem.offsetWidth / 2) + 'px'}">{{hoveredItem?.timestamp | date: 'shortTime'}}
+        </small>
+
+        <div class="vl" *ngIf="hoveredItem"
+             [ngStyle]="{position: 'absolute',
+                         left: hoveredItem.x + 'px',
+                         top: '0px',
+                         pointerEvents: 'none',
+                         height: (chart.el.nativeElement.offsetParent.offsetHeight) + 'px'
+                         }">
+        </div>
+
+    </div>
+</app-card-section>
+
+
+<p-toast [style]="{marginTop: '80px'}"></p-toast>

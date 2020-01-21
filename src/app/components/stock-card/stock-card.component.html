@@ -1,0 +1,36 @@
+<p-dialog
+        [(visible)]="visible"
+        [modal]="true"
+        [responsive]="true"
+        [style]="{width: '50vw', minHeight: '95vh', top: '0'}"
+        [maximizable]="false"
+        [baseZIndex]="10000"
+        [dismissableMask]="true"
+        [draggable]="false"
+        [contentStyle]="{'overflow-x': 'hidden',
+                           'overflow-y': 'hidden',
+                           'max-height': '80vh','min-height':'250px'}"
+        [closeOnEscape]="true"
+        [breakpoint]="768"
+        (visibleChange)="visibleChange.emit(visible)">
+
+    <p-header>
+        <strong>{{stock?.symbol}}</strong> |  {{stock?.companyName}}
+    </p-header>
+
+    <div class="d-flex flex-wrap w-100 stock-card-section">
+
+        <div class="col-9">
+            <p-scrollPanel [style]="{width: '100%', height: '75vh'}">
+                <app-supplemental-section *ngIf="stock"></app-supplemental-section>
+                <app-chart-section *ngIf="stock" [stock]="stock"></app-chart-section>
+                <app-company-details-section *ngIf="stock" [stock]="stock"></app-company-details-section>
+            </p-scrollPanel>
+        </div>
+
+        <div class="col-3">
+            <app-card-menu></app-card-menu>
+        </div>
+    </div>
+
+</p-dialog>

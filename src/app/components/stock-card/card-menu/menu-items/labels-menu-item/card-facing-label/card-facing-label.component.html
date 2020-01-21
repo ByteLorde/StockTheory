@@ -1,0 +1,7 @@
+<div class="label-outer d-flex align-items-center">
+    <div class="card-label-container d-flex justify-content-between flex-grow-1" [ngClass]="{ 'expanded' : expanded, 'collapsed' : !expanded }"
+         [ngStyle]="{ backgroundColor: label.color }"
+         (click)="labelClicked.emit(label)">
+        <span class="card-label-text" [ngClass]="{ 'text-visible' : expanded, 'text-hidden' : !expanded }"> {{label.text || '&nbsp;'}}</span>
+    </div>
+</div>
