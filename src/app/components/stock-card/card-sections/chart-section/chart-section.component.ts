@@ -58,14 +58,14 @@ export class ChartSectionComponent implements OnInit, CardSectionItem {
                 const ctx = this.chart.chart.ctx;
                 const gradientStroke: CanvasGradient = ctx.createLinearGradient(500, 0, 100, 0);
                 // gradientStroke.addColorStop(0, '#21ce99');
-                gradientStroke.addColorStop(0, 'rgba(240, 255, 200, 1)');
+                gradientStroke.addColorStop(0, 'rgba(200, 255, 200, 1)');
                 // ctx.shadowColor = "black";
                 ctx.shadowBlur = 10;
                 ctx.shadowOffsetX = 0;
                 ctx.shadowOffsetY = 0;
                 // ctx.shadowColor = 'rgba(0, 255, 255, 1)'; // CYAN
                 // ctx.shadowColor = '#21ce99'; // RGREEN
-                // ctx.shadowColor = 'rgb(255, 0, 0)'; // RED
+                // ctx.shadowColor = 'rgb(255, 0, 0)'
                 ctx.shadowColor = 'rgba(0, 240, 0, 1)'; // CYAN
                 // ctx.shadowColor = 'rgba(255, 0, 0, 1)';
                 ctx.strokeRect(100, 100, 200, 200);

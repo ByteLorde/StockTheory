@@ -29,7 +29,7 @@ export class LabelService {
       label6
     ];
 
-    this.labelsForCard = this.mockLabels;
+    this.labelsForCard = [...this.mockLabels];
   }
 
   getLabels(): Observable<Label[]> {

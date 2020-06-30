@@ -1,27 +1,31 @@
 <p-dialog
+        #dialog
         [(visible)]="visible"
         [modal]="true"
         [responsive]="true"
-        [style]="{width: '50vw', minHeight: '95vh', top: '0'}"
+        [style]="{width: '55vw', height:'calc(100% - 30px)', overflow: 'hidden'}"
         [maximizable]="false"
+        [resizable]="false"
         [baseZIndex]="10000"
         [dismissableMask]="true"
+        positionTop="15"
         [draggable]="false"
         [contentStyle]="{'overflow-x': 'hidden',
                            'overflow-y': 'hidden',
-                           'max-height': '80vh','min-height':'250px'}"
+                           'padding': '0',
+                           'height': 'auto'}"
         [closeOnEscape]="true"
         [breakpoint]="768"
         (visibleChange)="visibleChange.emit(visible)">
 
-    <p-header>
+    <p-header #header>
         <strong>{{stock?.symbol}}</strong> |  {{stock?.companyName}}
     </p-header>
 
-    <div class="d-flex flex-wrap w-100 stock-card-section">
-
+    <div class="d-flex flex-wrap w-100 stock-card-section h-100" #content>
         <div class="col-9">
-            <p-scrollPanel [style]="{width: '100%', height: '75vh'}">
+            <p-scrollPanel [style]="{width: '100%',
+             height: content?.offsetHeight - dialog.headerViewChild?.nativeElement?.offsetHeight + 'px' }">
                 <app-supplemental-section *ngIf="stock"></app-supplemental-section>
                 <app-chart-section *ngIf="stock" [stock]="stock"></app-chart-section>
                 <app-company-details-section *ngIf="stock" [stock]="stock"></app-company-details-section>

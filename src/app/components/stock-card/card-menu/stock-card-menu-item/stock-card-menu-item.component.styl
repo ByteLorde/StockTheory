@@ -2,7 +2,7 @@
 
 .stock-card-menu-button
   text-align: left
-  background-color: $black-3
+  background-color: $black-2
   height: 32px
   border: none
   margin: 3px 0
@@ -10,7 +10,7 @@
   transition: all .2s ease-in-out
 
   &:enabled:hover
-    background-color: $black-4
+    background-color: $black-3
 
   &:enabled:focus
     box-shadow: none
@@ -18,16 +18,26 @@
   &:enabled:active
     transition: all .05s ease-in-out
     opacity: .7
-    background-color: $black-2
+    background-color: $black-1
     transform: scale(.98)
 
 .overlay-content
   width: 300px
   overflow: hidden
   padding: 5px 10px
+  animation: fade-in 500ms ease-in-out
+
 
 //app-stock-card-menu-item > button > span.ui-button-text.ui-clickable
 ::ng-deep button.stock-card-menu-button span.ui-button-text
   margin-left: 5px
   font-size: .95em
 
+@keyframes fade-in {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}

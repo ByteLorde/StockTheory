@@ -1,0 +1,31 @@
+.fog {
+  position: absolute;
+
+  height: 100vh;
+  width: 300vw;
+
+  overflow: hidden;
+  &.fog-1 {
+    background: url('https://res.cloudinary.com/dkr52htco/image/upload/v1536173269/fog-1.png') repeat-x;
+    background-size: contain;
+    background-position: center;
+    opacity: .4;
+    animation: marquee 180s linear reverse infinite;
+  }
+
+  &.fog-2 {
+    background: url('https://res.cloudinary.com/dkr52htco/image/upload/v1536173269/fog-2.png') repeat-x;
+    background-size: contain;
+    background-position: center;
+    opacity: .6;
+    animation: marquee 150s linear infinite;
+  }
+}
+
+// Marquee
+@keyframes marquee {
+  0% { transform: translate3d(0, 0, 0); }
+  100% {
+    transform: translate3d(-200vw, 0, 0);
+  }
+}

@@ -1,55 +1,27 @@
-<app-stock-card-menu-item [icon]="icon" [iconPosition]="iconPosition" [label]="label">
+<app-stock-card-menu-item [icon]="icon" [iconPosition]="iconPosition" [label]="label" [disabled]="disabled">
 
     <div class="members-header d-flex justify-content-center align-items-center">
-        <span class="fg-green-1-glow" style="font-weight: 700">Members</span>
+        <span class="fg-green-1-glow" style="font-weight: 700">{{group?.name}}</span>
     </div>
     <hr>
     <div class="members-search-container">
         <input pInputText type="text"
                placeholder="Search members..."
                [(ngModel)]="searchCriteria"
-               [ngStyle]="{ width: '100%' }"
-               (ngModelChange)="updateLists()">
+               [ngStyle]="{ width: '100%' }">
     </div>
 
-    <p-scrollPanel [style]="{width: '100%', height: '400px', paddingTop: '5px'}">
+    <p-scrollPanel [style]="{width: '100%', height: 'auto', maxHeight: '400px', paddingTop: '5px'}">
 
         <div class="members-group-section fg-white">
-            <span class="board-group-heading">CARD MEMBERS ({{filteredCardMembers?.length}})</span>
-            <div *ngFor="let member of _cardMembers" (click)="removeMemberFromCard(member)" class="member-item"
-                 [ngClass]="{ 'member-item-hidden': !filteredCardMembers.includes(member),
-                                                                                    'member-item-shown' : filteredCardMembers.includes(member)}">
+            <span class="board-group-heading">MEMBERS ({{filteredList?.length}})</span>
+            <div *ngFor="let member of group?.members" (click)="toggleMember(member)" class="member-item"
+                 [ngClass]="{ 'member-item-hidden': !filteredList.includes(member),
+                              'member-item-shown' : filteredList.includes(member)}">
                 <i class="pi pi-user member-avatar"></i>
                 <span class="member-name">{{member?.firstName}} {{member?.lastName}} {{member?.username ? '(' + member?.username + ')' : ''}}</span>
-                <i class="pi pi-check member-check" style="float: right"></i>
+                <i class="pi pi-check member-check" style=" float: right" *ngIf="(cardMembers | async)?.includes(member)"></i>
             </div>
-        </div>
-
-        <div class="members-group-section fg-white">
-            <span class="board-group-heading">GROUPS ({{filteredMemberGroups?.length}})</span>
-
-            <div *ngFor="let group of _memberGroups" (click)="addGroupToCard(group)" class="member-item" [ngClass]="{ 'member-item-hidden': !filteredMemberGroups.includes(group),
-                                                                                     'member-item-shown' : filteredMemberGroups.includes(group)}">
-                <i class="pi pi-users member-avatar"></i>
-                <span class="member-name">{{group?.name}} ({{group?.members?.length}})</span>
-                <i class="pi pi-info-circle member-group-info"
-                   [escape]="false"
-                   [tooltipZIndex]="'999999999'"
-                   style="float: right"
-                   [tooltipPosition]="'left'"
-                   pTooltip="{{getMembersFromGroup(group)}}"></i>
-            </div>
-        </div>
-
-        <div class="members-group-section fg-white">
-            <span class="board-group-heading">ALL MEMBERS ({{filteredAllMembers?.length}})</span>
-
-            <div *ngFor="let member of _allMembers" (click)="addMemberToCard(member)" class="member-item" [ngClass]="{ 'member-item-hidden': !filteredAllMembers.includes(member),
-                                                                                    'member-item-shown' : filteredAllMembers.includes(member)}">
-                <i class="pi pi-user member-avatar"></i>
-                <span class="member-name">{{member.firstName}} {{member.lastName}} {{member.username ? '(' + member.username + ')' : ''}}</span>
-            </div>
-
         </div>
 
     </p-scrollPanel>

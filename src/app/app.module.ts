@@ -42,6 +42,7 @@ import { BuySellComponent } from './components/stock-card/card-menu/menu-items/b
 import { DropdownModule } from 'primeng/dropdown';
 import { SupplementalSectionComponent } from './components/stock-card/card-sections/supplemental-section/supplemental-section.component';
 import { CardFacingLabelComponent } from './components/stock-card/card-menu/menu-items/labels-menu-item/card-facing-label/card-facing-label.component';
+import { LabelsEditComponent } from './components/stock-card/card-menu/menu-items/labels-menu-item/labels-edit/labels-edit.component';
 
 @NgModule({
     declarations: [
@@ -64,7 +65,8 @@ import { CardFacingLabelComponent } from './components/stock-card/card-menu/menu
         MembersMenuItemComponent,
         BuySellComponent,
         SupplementalSectionComponent,
-        CardFacingLabelComponent
+        CardFacingLabelComponent,
+        LabelsEditComponent
     ],
     imports: [
         BrowserModule,

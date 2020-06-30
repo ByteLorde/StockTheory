@@ -1,27 +1,33 @@
 <div class="card-menu-container w-100">
 
     <div class="card-menu-container">
+        <strong class="card-menu-heading">ACTIONS</strong>
+        <ul class="card-menu-list">
+            <li>
+                <app-buy-sell></app-buy-sell>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="card-menu-container">
         <strong class="card-menu-heading">ADD TO CARD</strong>
         <ul class="card-menu-list">
             <li>
-                <app-members-menu-item></app-members-menu-item>
                 <app-labels-menu-item></app-labels-menu-item>
             </li>
         </ul>
     </div>
 
     <div class="card-menu-container">
-        <strong class="card-menu-heading">ACTIONS</strong>
+        <strong class="card-menu-heading">MEMBER GROUPS</strong>
         <ul class="card-menu-list">
             <li>
-                <app-buy-sell></app-buy-sell>
-                <app-buy-sell></app-buy-sell>
-                <app-buy-sell></app-buy-sell>
-                <app-buy-sell></app-buy-sell>
+                <app-members-menu-item *ngFor="let group of memberGroups | async"
+                                       [group]="group">
+                </app-members-menu-item>
             </li>
         </ul>
     </div>
-
-
 
 </div>

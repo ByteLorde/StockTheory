@@ -113,7 +113,7 @@ export class MembersService {
         this.mockMembersForCard = [];
     }
 
-    fetchMemberGroups() {
+    fetchMemberGroups(): Observable<MemberGroup[]> {
         return of(this.mockGroups);
     }
 

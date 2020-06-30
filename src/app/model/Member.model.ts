@@ -3,11 +3,13 @@ export class Member {
     firstName: string;
     lastName: string;
     username: string;
+    email: string;
 
-    constructor(firstName?, lastName?, username?) {
+    constructor(firstName?, lastName?, username?, email?) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
+        this.email = email;
     }
 }
 

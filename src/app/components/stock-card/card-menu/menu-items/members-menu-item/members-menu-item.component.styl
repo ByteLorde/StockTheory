@@ -23,7 +23,7 @@
   margin: 0
 
 .member-item
-  width: calc(100% + 18px)
+  width: calc(100%)
   padding: 7px
   border-radius: 3px
   display: flex
@@ -32,13 +32,14 @@
   position: relative
   cursor: pointer
   background-color: $black-3
-  border-left: 0px double transparent
+  border-left: 6px double rgb(0, 200, 0)
   margin-top: 5px
-  transition: all 200ms ease-in-out
+  transition: all 300ms ease-in-out
 
   &:hover
-    border-left: 6px double $green-1
+    border-left: 6px double white
     border-radius:3px
+
 
 .member-avatar
   border-radius:50px
@@ -55,6 +56,7 @@
   position: absolute
   right: 23px
   color: white
+  animation: fade-in 300ms ease-in-out
 
 .member-group-info
   position: absolute
@@ -91,6 +93,16 @@
   }
 
   100% {
+    opacity: 1
+  }
+}
+
+@keyframes fade-in {
+
+  from {
+    opacity: 0
+  }
+  to {
     opacity: 1
   }
 }
