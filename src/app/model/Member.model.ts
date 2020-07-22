@@ -1,4 +1,6 @@
 export class Member {
+    userId: string;
+
     avatar: any;
     firstName: string;
     lastName: string;

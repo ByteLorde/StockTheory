@@ -1,0 +1,96 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+.border-rotating-rainbow {
+  position: relative;
+  z-index: 0;
+  width: 400px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 2rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: #399953;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background-image: linear-gradient(#399953, #399953), linear-gradient(#fbb300, #fbb300), linear-gradient(#d53e33, #d53e33), linear-gradient(#377af5, #377af5);
+    animation: rotate 4s linear infinite;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 6px;
+    top: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    background: white;
+    border-radius: 5px;
+  }
+}
+
+
+.border-rotating-cyan-beacon {
+  position: relative;
+  z-index: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 1rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: #black;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background: linear-gradient(90deg, rgba(244,251,252,1) 0%, rgba(57,216,250,1) 9%, rgba(0,0,0,1) 40%), linear-gradient(90deg, rgba(244,251,252,1) 0%, rgba(57,216,250,1) 9%, rgba(0,0,0,1) 40%), linear-gradient(90deg, rgba(244,251,252,1) 0%, rgba(57,216,250,1) 9%, rgba(0,0,0,1) 40%), linear-gradient(90deg, rgba(244,251,252,1) 0%, rgba(57,216,250,1) 9%, rgba(0,0,0,1) 40%);
+
+    //background-image: linear-gradient(to right, #00a1e9, #000), linear-gradient(#9500dd, #000), linear-gradient(to right, #000, #00a1e9), linear-gradient(#000, #9500dd);
+    animation: rotate 5s linear infinite;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 3px;
+    top: 3px;
+    width: calc(100% - 5px);
+    height: calc(100% - 5px);
+    background: black;
+    border-radius: 50px;
+  }
+}
+@keyframes rotate {
+  0% {
+    opacity: 1
+    width: 200%
+    height: 200%
+  }
+
+  50% {
+  }
+  100% {
+    width: 250%
+    height: 250%
+    transform: rotate(-1turn);
+  }
+}

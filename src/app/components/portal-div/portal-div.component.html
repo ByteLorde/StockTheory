@@ -1,0 +1,15 @@
+<div class="portal-container d-flex flex-nowrap align-items-center">
+    <div #portalLeft class="portal-content"
+         [ngStyle]="{ paddingRight: portalSpacing + 'px' }">
+        <ng-content select="[left]"></ng-content>
+    </div>
+
+    <div #portalRight class="portal-content"
+         [ngClass]="animateRight && collapsed ? 'collapsed' : 'expanded'"
+         [ngStyle]="{ paddingLeft: portalSpacing + 'px' }"
+         style="border-left: 1px solid white">
+        <div class="content-inner content-inner-right d-flex flex-nowrap" [ngClass]=" animateRight && collapsed ? 'collapsed' : 'expanded'">
+            <ng-content select="[right]"></ng-content>
+        </div>
+    </div>
+</div>

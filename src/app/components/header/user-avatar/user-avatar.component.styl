@@ -1,0 +1,101 @@
+$avatar-item-padding = 20px
+
+.avatar-item
+  padding-left: $avatar-item-padding
+  padding-right: $avatar-item-padding
+
+.left
+  overflow: hidden
+
+  & > div
+    margin-left: 100%
+    opacity: 0
+    animation: slide-in-left 500ms 500ms ease-in-out forwards
+
+.right
+  border-left: none
+
+  animation: border-fade-in 500ms ease-in-out forwards
+
+.supplemental-info-label
+  font-size: .95em
+
+.initials-container
+  border-radius: 50%
+  width: 40px
+  height: 40px
+
+  background-color: transparent
+  color: white
+  display: flex
+  justify-content: center
+  align-items: center
+
+.horizontal-spacer
+  width: 10px
+
+
+
+
+@keyframes slide-in-left {
+  from {
+    margin-left: 100%
+    opacity: 0
+  }
+
+  to {
+    margin-left: 0
+    opacity: 1
+  }
+}
+
+@keyframes border-fade-in {
+  from {
+    border-left: 1px solid rgba(255, 255, 255, 0)
+  }
+
+  to {
+    border-left: 1px solid rgba(255, 255, 255, .7)
+  }
+}
+.initials
+  //box-shadow:         0px 0px 5px 6px rgba(0, 0, 0, 1);
+  font-size: .9em;
+  border-radius: 50px
+  background-color: rgba(0, 0, 0, .8)
+  width: 30px
+  height: 30px
+  display: flex
+  justify-content: center
+  align-items: center
+
+.animation-bubble
+  width: 40px;
+  position: relative
+  height: 40px;
+  border-radius: 50%;
+  opacity: 1
+  border 2px dotted gray;
+  transition: border-color 300ms ease-in-out
+  animation: rotate 10s linear infinite
+
+  & > *
+    animation: rotate 10s linear infinite
+    animation-direction: reverse
+
+.mask
+  position: absolute
+  top: 0
+  left: 0
+  background-color: rgba(0,0,0, .5)
+  width: 25px
+  height: 55px
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

@@ -33,6 +33,11 @@ export class StockService {
         return this.http.get(environment.list_volume);
     }
 
+    fetchStockQuote(symbol: string) {
+        return of(mockStockQuote);
+        // return this.http.get(environment.stock_quote.replace('$1', symbol));
+    }
+
     fetchCompanyProfile(symbol: string): Observable<CompanyProfile> {
         return of({
             symbol: 'AAPL',
@@ -62,3 +67,61 @@ export class StockService {
 
     }
 }
+
+const mockStockQuote = {
+    avgTotalVolume: 34822796,
+    calculationPrice: "close",
+    change: 9.74,
+    changePercent: 0.02675,
+    close: 373.85,
+    closeSource: "official",
+    closeTime: 1594065600719,
+    companyName: "Apple, Inc.",
+    delayedPrice: 373.83,
+    delayedPriceTime: 1594071982020,
+    extendedChange: 1.6,
+    extendedChangePercent: 0.00428,
+    extendedPrice: 375.45,
+    extendedPriceTime: 1594079998565,
+    high: 375.78,
+    highSource: "15 minute delayed price",
+    highTime: 1594072007418,
+    iexAskPrice: 0,
+    iexAskSize: 0,
+    iexBidPrice: 0,
+    iexBidSize: 0,
+    iexClose: 374.09,
+    iexCloseTime: 1594065599851,
+    iexLastUpdated: 1594065599851,
+    iexMarketPercent: 0.00864817688504566,
+    iexOpen: null,
+    iexOpenTime: null,
+    iexRealtimePrice: 374.09,
+    iexRealtimeSize: 100,
+    iexVolume: 255473,
+    isUSMarketOpen: false,
+    lastTradeTime: 1594065599976,
+    latestPrice: 373.85,
+    latestSource: "Close",
+    latestTime: "July 6, 2020",
+    latestUpdate: 1594065600719,
+    latestVolume: 29583523,
+    low: 369.87,
+    lowSource: "15 minute delayed price",
+    lowTime: 1594042214242,
+    marketCap: 1620393009000,
+    oddLotDelayedPrice: 374.11,
+    oddLotDelayedPriceTime: 1594065597120,
+    open: 369.95,
+    openSource: "official",
+    openTime: 1594042200514,
+    peRatio: 29.07,
+    previousClose: 364.11,
+    previousVolume: 28510367,
+    primaryExchange: "NASDAQ",
+    symbol: "AAPL",
+    volume: 29583523,
+    week52High: 375.78,
+    week52Low: 192.58,
+    ytdChange: 0.25585,
+};

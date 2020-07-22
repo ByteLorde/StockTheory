@@ -1,11 +1,13 @@
 <div class="page-wrapper flex-column justify-content-between">
-    <div class="header-wrapper bg-black-2">
-        <app-header></app-header>
+    <app-header></app-header>
+
+    <div class="page-content" [ngStyle]="{backgroundColor: getColorCoordinatedBackgroundColor(), transitionDuration: getAnimationDuration()}">
+        <div class="mask"></div>
+        <div style="z-index: 1; position: absolute; top: 0; left: 0; height: 100vh; width: 100vw">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 
-    <div class="page-content bg-black-1 fog">
-        <router-outlet></router-outlet>
-    </div>
 
     <div class="footer-wrapper bg-black-2">
         <app-footer></app-footer>

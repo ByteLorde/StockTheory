@@ -1,0 +1,173 @@
+.news-card-container
+  //background-color: rgba(45, 45,45, .05)
+  //padding: 15px 0
+  opacity: .7
+  width: 100%
+  border-radius: 4px
+  overflow: hidden
+  transition: all 300ms ease-in-out
+
+  animation: fade-in 400ms ease-in-out
+
+  &:hover
+    opacity: 1
+    //background-color:rgba(45, 45, 45, .5)
+    //padding-left: 10px
+
+.views-icon
+  padding: 4px
+  display: flex
+  align-items: center
+  justify-content: center
+  opacity: .8
+
+  &:nth-child(even)
+    margin-right: 5px;
+  &:nth-child(left)
+    margin-left: 5px;
+
+.views-label
+  &:nth-child(even)
+    padding-left: 5px
+  &:nth-child(odd)
+    padding-right: 5px
+
+.ticker-symbol-wrapper
+  padding-right: 20px
+
+.offscreen
+  opacity: 0;
+
+.news-label
+  overflow: hidden
+  max-height: 60px
+
+.card-header-section
+  font-size: .8em
+  max-size: 20px
+  padding-bottom: 10px
+  animation: fade-in 700ms 100ms ease-in-out forwards
+
+.card-body-section
+  animation: fade-in 700ms 400ms ease-in-out forwards
+
+.foot
+  animation: fade-in 700ms 600ms ease-in-out forwards
+
+.source-icon
+  transition: background-color 300ms ease-in-out
+  border-radius: 50px
+  font-size: 1.5em
+
+.source-label
+  color: white
+  font-weight: 700
+
+.headline-label
+  color: white
+  opacity: 1
+  font-weight: 700
+
+.news-actions-icon
+  font-size: 2em
+  padding-right: 5px
+
+  &.smaller
+    font-size: 1.7em
+    opacity: .8
+  &.card-active
+    position: absolute
+    right: 18px
+    animation: rotate-and-fade-away 400ms 600ms ease-in-out forwards
+
+
+.card-views-container
+  width: 150px
+
+.news-image
+  width:150px
+  height: 100px
+  border-radius: 5px
+  margin: 0
+
+.summary-label
+  opacity: .7
+  color: white
+
+.news-label
+  padding: 7px 0
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    margin-left: 100%;
+  }
+  to {
+    opacity: 1;
+    margin-left: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    position: relative
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}
+@keyframes rotate-and-fade-away {
+  from {
+    transform: rotate(0deg)
+    opacity: 1
+  }
+  to {
+    transform: rotate(-359deg);
+    opacity: 0
+  }
+}
+
+@keyframes rotate-and-fade-in {
+  from {
+      transform: rotate(359deg)
+      opacity: 0
+    }
+  to {
+      transform: rotate(0deg);
+      opacity: 1
+  }
+}
+
+@keyframes grow-in-right {
+  from {
+      width: 0
+    }
+  to {
+      width: 50%
+  }
+}
+
+.icons-container
+  display: flex
+  flex-wrap: nowrap
+  justify-content: flex-end
+  align-items: center
+  width: 0
+  opacity: 1
+  overflow:hidden
+  transition: all 500ms ease-in-out
+  animation: grow-in-right 800ms 650ms ease-in-out forwards
+
+  & > *
+    animation: rotate-and-fade-in 800ms 600ms ease-in-out
+
+.views-container
+  display: flex
+  align-items: center
+  justify-content: space-between
+  border-radius: 50%
+  font-size: .8em
+
+
+

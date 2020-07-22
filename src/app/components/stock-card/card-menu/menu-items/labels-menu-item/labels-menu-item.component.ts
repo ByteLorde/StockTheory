@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {CardMenuItem} from '../../stock-card-menu-item/MenuItem.model';
 import {LabelService} from '../../../../../services/label/label.service';
 import {Label} from '../../../../../model/Label.model';
-import {CardService} from '../../../../../services/card/card.service';
 
 @Component({
   selector: 'app-labels-menu-item',

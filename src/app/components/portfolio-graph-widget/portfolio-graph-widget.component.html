@@ -1,0 +1,39 @@
+
+
+<div class="portfolio-widget-container d-flex flex-column">
+
+    <strong class="portfolio-balance-label" style="color: lawngreen">{{25.37 | currency:'USD'}}</strong>
+
+    <span class="today-change-label-container" style="color: lawngreen">
+        <strong>{{25.37 | currency:'USD'}}</strong>
+        <strong>&nbsp;(100%)</strong>
+        <small>&nbsp;Today</small>
+    </span>
+    <span class="today-change-label-container">
+        <strong>{{0 | currency:'USD'}}</strong>
+        <strong>&nbsp;(0%)</strong>
+        <small>&nbsp;After Hours</small>
+    </span>
+
+    <div class="chart-container" style="padding: 15px 0">
+        <p-chart type="line"
+                 #chart
+                 *ngIf="data"
+                 [data]="data"
+                 [options]="options"
+                 (onDataSelect)="selectData($event)"
+                 [responsive]="true"
+                 [height]="'200px'"
+                 [width]="'100%'">
+        </p-chart>
+    </div>
+
+    <div class="chart-interval-links d-flex w-100">
+        <strong class="chart-interval-link">1D</strong>
+        <strong class="chart-interval-link selected">1W</strong>
+        <strong class="chart-interval-link">1M</strong>
+        <strong class="chart-interval-link">3M</strong>
+        <strong class="chart-interval-link">1Y</strong>
+        <strong class="chart-interval-link">ALL</strong>
+    </div>
+</div>

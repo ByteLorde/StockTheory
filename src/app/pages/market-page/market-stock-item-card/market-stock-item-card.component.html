@@ -1,0 +1,75 @@
+<div (mouseenter)="setCardActive(true)" (mouseleave)="setCardActive(false)" class="market-card-container">
+
+    <div class="offscreen card-header-section d-flex justify-content-between align-items-center">
+        <app-portal-div [portalSpacing]="5">
+            <strong class="company-name-label d-flex align-items-center"
+                    left>{{formattedCompanyName | titlecase}}</strong>
+            <strong class="company-symbol-label d-flex align-items-center" right
+                    style="opacity: .7">{{stockQuote?.symbol | uppercase}}</strong>
+        </app-portal-div>
+
+        <span>
+            <strong class="portfolio-balance-label" style="color: lawngreen">{{25.37 | currency:'USD'}}</strong>
+            <strong class="portfolio-dollar-label">+{{4.29 | number}}</strong>
+            <strong class="portfolio-balance-label" style="color: lawngreen">{{22.63}}</strong>
+        </span>
+
+
+        <!--        <i class="pi pi-ellipsis-h news-actions-icon cursor-pointer"></i>-->
+
+        <!--        <div class="icons-container" *ngIf="cardActive">-->
+        <!--            <i class="pi pi-share-alt news-actions-icon smaller cursor-pointer"></i>-->
+        <!--            <i class="pi pi-comment news-actions-icon smaller cursor-pointer"></i>-->
+        <!--            <i class="pi pi-external-link news-actions-icon smaller cursor-pointer"></i>-->
+        <!--        </div>-->
+    </div>
+
+    <div class="offscreen card-body-section d-flex flex-row space-between">
+        <div class="card-content flex-grow-1 flex-column d-flex" style="padding-right: 10px">
+
+            <!--            <strong class="portfolio-balance-label" style="color: lawngreen">{{25.37 | currency:'USD'}}</strong>-->
+
+            <!--            <span class="today-change-label-container" style="color: lawngreen">-->
+            <!--                <strong>+{{2.4 | currency:'USD'}}</strong>-->
+            <!--                <sup style="font-weight: 800">&nbsp;(+9.78%) Today</sup>-->
+            <!--            </span>-->
+            <!--            <span class="today-change-label-container">-->
+            <!--                <strong>&infin;{{0 | currency:'USD'}}</strong>-->
+            <!--                <sup style="font-weight: 800">&nbsp;(0%) After Hours</sup>-->
+            <!--            </span>-->
+            <!--            -->
+            <!--            <div class="news-text-content d-flex flex-column justify-content-between">-->
+            <!--                <a [href]="news?.url" target="_blank" class="news-label headline-label">{{news?.headline}}</a>-->
+            <!--                <a class="news-label summary-label">{{news?.summary}}</a>-->
+            <!--            </div>-->
+        </div>
+
+        <div class="card-content">
+            <img [src]="news?.image" class="news-image">
+        </div>
+    </div>
+
+    <div class="offscreen foot d-flex flex-row flex-nowrap justify-content-between" style="padding-top: 10px">
+
+        <p-scrollPanel [style]="{height: 'auto', width: '100%'}" class="horizontal-panel">
+                <app-initials-button *ngFor="let user of relevantUsersList" [user]="user"></app-initials-button>
+        </p-scrollPanel>
+
+        <div class="card-views-container d-flex flex-nowrap align-items-center justify-content-between" style="width: 25%">
+
+            <div class="views-container" style="padding-right:15px">
+                <!--                <i class="pi pi-users views-icon" [ngStyle]="{color: moodbarColor}"></i>-->
+                <i class="pi pi-users views-icon"></i>
+
+                <span class="views-label">{{5 | number}}</span>
+            </div>
+
+            <div class="views-container">
+                <span class="views-label">{{21613 | number}}</span>
+                <i class="pi pi-eye views-icon" style="font-size: 1.6em; padding: 2px"></i>
+            </div>
+        </div>
+
+
+    </div>
+</div>

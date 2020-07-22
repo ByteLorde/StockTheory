@@ -1,0 +1,17 @@
+
+<div class="page d-flex flex-row">
+    <div class="filter-container">
+        <app-page-filter [filters]="filters"></app-page-filter>
+    </div>
+
+    <div class="page-content d-flex flex-column flex-grow-1">
+        <div class="news-wrapper" style="width: 65%;">
+            <p-scrollPanel [style]="{width: '100%', height: '75vh'}">
+                <div class="news-card-wrapper" *ngFor="let news of newsArticles">
+                    <app-market-stock-item-card [news]="news"></app-market-stock-item-card>
+                </div>
+            </p-scrollPanel>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,23 @@
+<div class="ticker-symbol-container d-flex flex-row flex-nowrap align-items-center"
+            [ngClass]="spacing === 'between' ? 'justify-content-between' : ''">
+
+    <strong class="stock-symbol-label w-50">{{quote?.symbol}}</strong>
+
+    <div class="trend-container d-flex flex-nowrap align-items-center"
+         [ngStyle]="{flexDirection: iconPlacement === 'right' ? 'row-reverse' : 'row'}">
+        <i class="pi ticker-trend-symbol"
+           [class]="isTrendingUp() && isBigChange"
+           [ngClass]="{
+              'trend-positive': isTrendingUp(),
+              'trend-negative': !isTrendingUp(),
+              'pi-angle-up': isTrendingUp() && !isBigChange(),
+              'pi-angle-double-up': isTrendingUp() && isBigChange(),
+              'pi-angle-double-down': !isTrendingUp() && isBigChange(),
+              'pi-angle-down': !isTrendingUp() && !isBigChange()
+           }"
+        ></i>
+        <span class="change-percent-label">
+            {{quote?.changePercent * 100 | number:'1.2-2'}}%
+        </span>
+    </div>
+</div>

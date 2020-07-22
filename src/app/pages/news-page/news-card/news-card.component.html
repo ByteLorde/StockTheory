@@ -1,0 +1,63 @@
+<div class="news-card-container" (mouseenter)="setCardActive(true)" (mouseleave)="setCardActive(false)">
+
+    <div class="offscreen card-header-section d-flex justify-content-between align-items-center">
+        <strong class="source-label d-flex align-items-center">
+            <i class="pi pi-compass source-icon" [ngStyle]="{backgroundColor: moodbarColor}" style="opacity: .7"></i>&nbsp;{{news?.source | titlecase}} (5h)</strong>
+
+        <i class="pi pi-ellipsis-h news-actions-icon cursor-pointer"></i>
+
+<!--        <div class="icons-container" *ngIf="cardActive">-->
+<!--            <i class="pi pi-share-alt news-actions-icon smaller cursor-pointer"></i>-->
+<!--            <i class="pi pi-comment news-actions-icon smaller cursor-pointer"></i>-->
+<!--            <i class="pi pi-external-link news-actions-icon smaller cursor-pointer"></i>-->
+<!--        </div>-->
+    </div>
+
+    <div class="offscreen card-body-section d-flex flex-row space-between">
+        <div class="card-content flex-grow-1" style="padding-right: 10px">
+            <div class="news-text-content d-flex flex-column justify-content-between">
+                <a [href]="news?.url" target="_blank" class="news-label headline-label">{{news?.headline}}</a>
+                <a class="news-label summary-label">{{news?.summary}}</a>
+            </div>
+        </div>
+
+        <div class="card-content">
+            <img class="news-image" [src]="news?.image">
+        </div>
+    </div>
+
+    <div class="offscreen foot d-flex flex-row flex-nowrap justify-content-between" style="padding-top: 10px">
+
+        <div class="symbols-container d-flex flex-row flex-nowrap" style="width: 75%">
+            <div *ngFor="let ticker of relatedNews" class="ticker-symbol-wrapper">
+                <app-ticker-symbol [symbol]="ticker"></app-ticker-symbol>
+            </div>
+
+            <div *ngFor="let ticker of relatedNews" class="ticker-symbol-wrapper">
+                <app-ticker-symbol [symbol]="ticker"></app-ticker-symbol>
+            </div>
+
+            <div *ngFor="let ticker of relatedNews" class="ticker-symbol-wrapper">
+                <app-ticker-symbol [symbol]="ticker"></app-ticker-symbol>
+            </div>
+        </div>
+
+        <div class="card-views-container d-flex flex-nowrap align-items-center justify-content-between">
+
+            <div class="views-container" style="padding-right:15px">
+                <!--                <i class="pi pi-users views-icon" [ngStyle]="{color: moodbarColor}"></i>-->
+                                <i class="pi pi-users views-icon"></i>
+
+                <span class="views-label">{{5 | number}}</span>
+            </div>
+
+            <div class="views-container">
+                <span class="views-label">{{21613 | number}}</span>
+                <i class="pi pi-eye views-icon" style="font-size: 1.6em; padding: 2px"></i>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>

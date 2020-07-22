@@ -40,6 +40,10 @@ export class LabelService {
     return of(this.labelsForCard);
   }
 
+  fetchLabelsForSymbol(symbol: string) {
+    return of(this.labelsForCard);
+  }
+
   addLabelToCard(label: Label, cardId: string) {
     if (this.labelsForCard.includes(label)) {
       return;

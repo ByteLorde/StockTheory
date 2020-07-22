@@ -1,0 +1,25 @@
+@import '../../../assets/styles/_base.styl'
+
+.header-container > *
+  width: 100%
+
+.header-top
+  transition: background-color 300ms ease-in-out;
+  padding: 15px $global-margin
+  position: relative
+  height: 78px
+
+  & .ui-inputgroup
+    padding: $global-margin
+
+.header-middle
+  background-color: gray
+.mask
+  position: absolute
+  top: 0
+  left: 0
+  width: 100vw
+  height: 78px
+  z-index: 0
+  background-color: black
+  background: linear-gradient(90deg, rgba(0,0,0,.99) 0%, rgba(0,0,0,.95) 10%, rgba(0,0,0, .99) 30%  )

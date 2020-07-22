@@ -1,0 +1,10 @@
+<div class="filter-group-component">
+    <strong class="filter-group-component-header"  (click)="toggleExpand()">
+        {{filterGroup?.label | titlecase}}
+        <i class="pi expand-collapse-icon" [ngClass]="expanded ? 'pi-minus' : 'pi-plus'"></i>
+    </strong>
+
+    <div class="group-items d-flex flex-column">
+        <app-page-filter-group-item *ngFor="let filterGroupItem of filterGroup.getFilters()" [filterGroupItem]="filterGroupItem"></app-page-filter-group-item>
+    </div>
+</div>

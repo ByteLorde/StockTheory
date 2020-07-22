@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {NavigationEnd, NavigationStart, Router} from '@angular/router';
+import {PortalDivComponent} from '../portal-div/portal-div.component';
+import {MoodBarService} from '../mood-bar/mood-bar.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +10,50 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+    @ViewChild('portalDivComponent', {static: false})
+    portalDivComponent: PortalDivComponent;
 
-  ngOnInit() {
+    parentRoute: string;
+
+  mockSuggestions = [
+      'something',
+      'else'
+  ];
+
+  parentIconMap = {
+      news: 'pi-globe',
+      portfolio: 'pi-home',
+      market: 'pi-chart-line',
+      activity: 'pi-users'
+  };
+
+  constructor(private router: Router,
+              private moodbarService: MoodBarService) {
+
   }
 
+  ngOnInit() {
+      this.router.events.subscribe(event => {
+          if (event instanceof NavigationStart) {
+              this.portalDivComponent.triggerAnimation(300);
+          }
+          if (event instanceof NavigationEnd) {
+              setTimeout(() => {
+                  this.parentRoute = this.router.url.replace('/', '');
+              }, 300);
+              this.portalDivComponent.triggerAnimation(300);
+          }
+      });
+  }
+
+  getBackgroundGradient() {
+      return this.moodbarService.moodbarColor;
+  }
+
+  get parentRouteIcon() {
+      if (!this.parentRoute) {
+          return;
+      }
+     return this.parentIconMap[this.parentRoute.toLowerCase()];
+  }
 }

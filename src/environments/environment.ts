@@ -9,7 +9,13 @@ export const environment = {
   list_gainers: `${IEX_URL}/stock/market/list/gainers`,
   list_losers: `${IEX_URL}/stock/market/list/losers`,
   list_volume: `${IEX_URL}/stock/market/list/iexvolume`,
-  list_percent: `${IEX_URL}/stock/market/list/iexpercent`
+  list_percent: `${IEX_URL}/stock/market/list/iexpercent`,
+
+  // QUOTE
+  stock_quote: `${IEX_URL}/stock/$1/quote`,
+
+  // NEWS
+  news_symbols: `${IEX_URL}/stock/$1/news`
 };
 
 /*

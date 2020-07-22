@@ -1,5 +1,7 @@
 @import 'custom-colors.styl'
 
+$global-margin = 5%
+
 *
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif
 html,
@@ -9,12 +11,34 @@ body
   height: 100vh
   font-size: 16px
   color: white
+  //background: linear-gradient(#8B8D7A, #000);
+  background: linear-gradient(#000, #133);
+
+
 hr
   margin: .5em 0
   background-color: rgba(200, 200, 200, .5)
 
 body .ui-button:enabled:focus
   box-shadow: none
+
+
+.global-padding-lr
+  padding-left: $global-margin
+  padding-right: $global-margin
+
+.global-margin-lr
+  margin-left: $global-margin
+  margin-right: $global-margin
+
+
+.global-padding-tb
+  padding-top: $global-margin
+  padding-bottom: $global-margin
+
+.global-margin-tb
+  margin-top: $global-margin
+  margin-bottom: $global-margin
 
 .bg-blue-1
   background-color: $blue-1
@@ -125,4 +149,9 @@ body .ui-button:enabled:focus
   padding-bottom: 10px
 
 .box-shadow-light
-  box-shadow: 0 -1px 5px rgba(150, 150, 150, .7);
+  box-shadow: 0 -1px 5px rgba(150, 150, 150, .7)
+
+.pointer
+  cursor: pointer
+.cursor-pointer
+  cursor: pointer

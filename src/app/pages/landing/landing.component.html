@@ -1,6 +1,21 @@
-<div class="table-wrapper" style="padding: 15px">
-    <p-card>
-        <app-stock-table *ngIf="topGainers" [tableData]="topGainers"></app-stock-table>
-    </p-card>
-</div>
+<!--<div class="table-wrapper" style="padding: 15px">-->
+<!--    <p-card>-->
+<!--        <app-stock-table *ngIf="topGainers" [tableData]="topGainers"></app-stock-table>-->
+<!--    </p-card>-->
+<!--</div>-->
 
+<div class="landing-page-container row">
+
+
+
+    <div class="col-2"></div>
+    <div class="col-8" style="padding-top: 2.5%">
+        <span style="margin: 30px 0"><app-portfolio-graph-widget></app-portfolio-graph-widget></span>
+        <span style="margin: 30px 0"><app-notifications-box-widget class="item-padding-tb"></app-notifications-box-widget></span>
+    </div>
+
+    <div class="col-2">
+
+    </div>
+
+</div>
