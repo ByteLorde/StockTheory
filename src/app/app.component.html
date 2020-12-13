@@ -1,8 +1,20 @@
 <div class="page-wrapper flex-column justify-content-between">
+
+
+
     <app-header></app-header>
 
-    <div class="page-content" [ngStyle]="{backgroundColor: getColorCoordinatedBackgroundColor(), transitionDuration: getAnimationDuration()}">
-        <div class="mask"></div>
+
+
+    <div class="page-content">
+<!--        <div class="mask"></div>-->
+        <div class="bg" style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0">
+            <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center">
+                <app-hexagonal-pulsate-zoom [radius]="20" [hexagonSize]="50"></app-hexagonal-pulsate-zoom>
+            </div>
+        </div>
+
+
         <div style="z-index: 1; position: absolute; top: 0; left: 0; height: 100vh; width: 100vw">
             <router-outlet></router-outlet>
         </div>

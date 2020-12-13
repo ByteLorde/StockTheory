@@ -73,6 +73,8 @@ import { MarketStockItemCardComponent } from './pages/market-page/market-stock-i
 import { StockQuoteGroupItemComponent } from './components/page-filter/page-filter-group/page-filter-group-item/stock-quote-group-item/stock-quote-group-item.component';
 import { CheckboxFilterGroupItemComponent } from './components/page-filter/page-filter-group/page-filter-group-item/checkbox-filter-group-item/checkbox-filter-group-item.component';
 import { InitialsButtonComponent } from './components/initials-button/initials-button.component';
+import { HexagonalPulseComponent } from './animation-components/hexagonal-pulse/hexagonal-pulse.component';
+import { HexagonalPulsateZoomComponent } from './animation-components/hexagonal-pulse/hexagonal-pulsate-zoom/hexagonal-pulsate-zoom.component';
 
 @NgModule({
     declarations: [
@@ -118,7 +120,9 @@ import { InitialsButtonComponent } from './components/initials-button/initials-b
         MarketStockItemCardComponent,
         StockQuoteGroupItemComponent,
         CheckboxFilterGroupItemComponent,
-        InitialsButtonComponent
+        InitialsButtonComponent,
+        HexagonalPulseComponent,
+        HexagonalPulsateZoomComponent
     ],
     imports: [
         BrowserModule,

@@ -1,0 +1,54 @@
+.hexagonal-pulsate-zoom-container
+  display: flex
+  flex-direction column
+  justify-content: center
+  align-items: center
+
+.hexagonal-orbital
+  width: 100%
+  display flex
+  justify-content center
+
+.hexagon
+  display: flex
+  position: relative
+  justify-content: center
+  align-items: center
+  transform: scale(.99) rotate(90deg)
+
+  transition: all 200ms ease-in-out
+  opacity: .9
+  -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+
+@keyframes pulse-in-out {
+  0% {
+    //opacity: .9;
+    transform: scale(.99) rotate(90deg)
+  }
+  50% {
+    //opacity: 0
+    border-radius:5px
+
+    transform: scale(0) rotate(0deg)
+  }
+  100% {
+    //opacity: .9;
+    transform: scale(.99) rotate(90deg)
+  }
+}
+
+@keyframes rotate {
+  0% {
+    opacity: .9;
+    //transform:rotateY(0deg) rotateZ(45deg)
+  }
+  50% {
+    opacity: .9
+    //transform:rotateY(180deg) rotateZ(45deg)
+  }
+  100% {
+    opacity: .9;
+    //transform: rotateY(359deg) rotateZ(45deg)
+  }
+}
