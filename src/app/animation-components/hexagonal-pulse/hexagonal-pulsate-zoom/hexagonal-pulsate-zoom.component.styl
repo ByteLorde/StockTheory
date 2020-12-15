@@ -11,31 +11,45 @@
 
 .hexagon
   display: flex
+  background-color: black
   position: relative
   justify-content: center
   align-items: center
-  transform: scale(.99) rotate(90deg)
+  //transform: scale(1) rotate(90deg)
 
-  transition: all 200ms ease-in-out
+  transform: scale(0) rotate(0deg)
+
+  transition: all 350ms ease-in-out
   opacity: .9
   -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
   clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
 
+.hexagon-mask
+    width: 100%
+    height: 100%
+    background radial-gradient(black 5%, rgba(0,0,0,0) 85%, #111)
+    z-index: 1
+    position: absolute
+    top: 0
+    left: 0
+
 @keyframes pulse-in-out {
   0% {
     //opacity: .9;
-    transform: scale(.99) rotate(90deg)
-  }
-  50% {
-    //opacity: 0
-    border-radius:5px
-
     transform: scale(0) rotate(0deg)
   }
-  100% {
-    //opacity: .9;
-    transform: scale(.99) rotate(90deg)
+  10% {
+    //opacity: 0
+
+    transform: scale(1) rotate(90deg)
   }
+  90% {
+    //opacity: .9;
+    //transform: scale(1) rotate(90deg)
+    transform: scale(1) rotate(90deg)
+
+  }
+
 }
 
 @keyframes rotate {

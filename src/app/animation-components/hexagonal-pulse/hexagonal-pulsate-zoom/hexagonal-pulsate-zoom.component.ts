@@ -25,36 +25,23 @@ export class HexagonalPulsateZoomComponent implements OnInit {
   }
 
   init() {
-    // const incrementInterval = setInterval(async() => {
-    //   this.radius += 1;
-    //   for (let i = 0; i < this.orbitals.length; i++) {
-    //     let orbital = this.orbitals[i];
-    //     orbital += 1;
-    //     this.orbitals[i] = orbital;
-    //     await this.delay(1000);
-    //   }
-    //   if (this.radius > 19) {
-    //     clearInterval(incrementInterval);
-    //   }
-    // }, 3000);
+
   }
 
   getBackground() {
-
     const color = this.moodBarService.moodbarColor;
-    // return color;
-    return this.sanitizer.bypassSecurityTrustStyle(`radial-gradient(black 5%, ${color} 85%, #111)`);
+    return color;
   }
 
   getOrbitals(numberOfOrbitals: number) {
     const orbitals = [];
 
-    const endpoint = (this.radius * 2) - 1;
+    const endpoint = (numberOfOrbitals * 2) - 1;
 
-    for (let orbital = this.radius; orbital < endpoint; orbital++) {
+    for (let orbital = numberOfOrbitals; orbital < endpoint; orbital++) {
       orbitals.push(orbital);
     }
-    for (let orbital = endpoint; orbital >= this.radius; orbital--) {
+    for (let orbital = endpoint; orbital >= numberOfOrbitals; orbital--) {
       orbitals.push(orbital);
     }
     return orbitals;

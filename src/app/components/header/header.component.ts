@@ -49,6 +49,7 @@ export class HeaderComponent implements OnInit {
   getBackgroundGradient() {
 
       const color = this.moodbarService.moodbarColor;
+      return color;
       // Fade over the entire image - not great.
       return 'linear-gradient(rgba(0, 0, 0, 0.0) 0%, rgba(255, 0, 0, 1.0) 100%)';
   }

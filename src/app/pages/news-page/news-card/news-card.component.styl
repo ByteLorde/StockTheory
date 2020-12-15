@@ -6,13 +6,18 @@
   border-radius: 4px
   overflow: hidden
   transition: all 300ms ease-in-out
-
+  font-size: 1em
   animation: fade-in 400ms ease-in-out
 
   &:hover
     opacity: 1
     //background-color:rgba(45, 45, 45, .5)
     //padding-left: 10px
+
+  & *:not(.pi)
+    font-family: 'helvetica'
+    letter-spacing: 2px
+
 
 .views-icon
   padding: 4px
@@ -93,6 +98,7 @@
 .summary-label
   opacity: .7
   color: white
+  font-weight: 700
 
 .news-label
   padding: 7px 0
