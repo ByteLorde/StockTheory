@@ -75,6 +75,8 @@ import { CheckboxFilterGroupItemComponent } from './components/page-filter/page-
 import { InitialsButtonComponent } from './components/initials-button/initials-button.component';
 import { HexagonalPulseComponent } from './animation-components/hexagonal-pulse/hexagonal-pulse.component';
 import { HexagonalPulsateZoomComponent } from './animation-components/hexagonal-pulse/hexagonal-pulsate-zoom/hexagonal-pulsate-zoom.component';
+import { HeaderModularComponent } from './components/header-modular/header-modular.component';
+import { GlobalSearchComponent } from './components/header-modular/global-search/global-search.component';
 
 @NgModule({
     declarations: [
@@ -122,7 +124,9 @@ import { HexagonalPulsateZoomComponent } from './animation-components/hexagonal-
         CheckboxFilterGroupItemComponent,
         InitialsButtonComponent,
         HexagonalPulseComponent,
-        HexagonalPulsateZoomComponent
+        HexagonalPulsateZoomComponent,
+        HeaderModularComponent,
+        GlobalSearchComponent
     ],
     imports: [
         BrowserModule,
