@@ -22,7 +22,7 @@ export class NewsPageComponent implements OnInit {
               private watchlistService: WatchlistService) { }
 
   ngOnInit() {
-    this.moodBarService.setMoodbarColor(MoodbarColor.BLUE);
+    this.moodBarService.setMoodbarColor(MoodbarColor.TEAL_BLUE);
     this.newsArticles = [];
     this.fetchNewsFromWatchlist();
   }

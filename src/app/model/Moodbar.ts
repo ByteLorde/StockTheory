@@ -8,5 +8,10 @@ export enum MoodbarColor {
    RED = 'rgba(200, 0, 0)',
    YELLOW = 'rgb(255,255,0)',
    ORANGE = 'rgb(255,130,22)',
-   BLACK = 'rgba(0, 0, 0, 1)'
+   BLACK = 'rgba(0, 0, 0, 1)',
+   TEAL_BLUE = '#2a4a8b',
+   TEAL = '#0091b5',
+   TEAL_GREEN = '#107869', // maybe
+   INDEPENDENCE_BLUE = '#4C516D',
+   PERIWINKLE = '#CCCCFF'
 }

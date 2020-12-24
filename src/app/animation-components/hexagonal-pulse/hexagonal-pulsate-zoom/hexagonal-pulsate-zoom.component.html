@@ -1,13 +1,13 @@
 <div class="hexagonal-pulsate-zoom-container">
     <div *ngFor="let orbital of orbitals" class="hexagonal-orbital">
         <div *ngFor="let hexagon of getArrayOfNumbers(orbital)" class="hexagon"
-             [style.background]="getBackground()"
              [style.width.px]="50"
              [style.height.px]="50"
              [style.marginTop.px]="-10"
+             [style.background]="getBackground()"
              [style.animation]="'pulse-in-out 15s alternate  infinite'"
              [style.animationDelay]="(hexagon * 100) + 'ms'">
-            <div class="hexagon-mask"></div>
+            <div class="hexagon-mask" ></div>
         </div>
     </div>
 </div>

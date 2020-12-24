@@ -27,7 +27,7 @@ export class MarketPageComponent implements OnInit {
               private watchlistService: WatchlistService) { }
 
   ngOnInit() {
-    this.moodBarService.setMoodbarColor(MoodbarColor.VIOLET);
+    this.moodBarService.setMoodbarColor(MoodbarColor.TEAL_BLUE);
     this.newsArticles = [];
     this.fetchNewsFromWatchlist();
   }
